@@ -1,61 +1,120 @@
 # FlagType
 
-**FlagType** is a lightweight, open-source macOS menu bar utility that displays your active keyboard layout as a flag right next to the cursor when hovering over text fields. Never type in the wrong language again.
+**FlagType** is a fast, lightweight, and open-source macOS utility that displays your active keyboard layout flag right next to the cursor when hovering over text fields and in the menu bar. Never type in the wrong language again.
 
 ![macOS 13+](https://img.shields.io/badge/macOS-13.0%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![Apple Silicon](https://img.shields.io/badge/arch-arm64-orange)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 
 ---
 
 ## Features
 
-- 🏳️ **Cursor Flag Indicator**: Shows the active keyboard layout flag next to the pointer when typing or hovering over input fields.
-- 📌 **Menu Bar Integration**: Displays the current language flag in the macOS menu bar for at-a-glance awareness.
-- ⚡ **Instant Switching**: Click the status item to switch between all enabled input sources.
-- ⌨️ **Smart Typing Detection**: Automatically hides the flag indicator while typing to keep your screen distraction-free.
-- 🚀 **Launch at Login**: Easily start FlagType automatically when logging into macOS.
-- 🪶 **Lightweight & Native**: Built with pure AppKit — negligible CPU and battery usage.
+- 🏳️ **Cursor Flag Indicator**: Displays the active keyboard layout flag next to the text pointer (I-beam) when editing or hovering over input fields.
+- 📌 **Menu Bar Indicator**: Shows the active keyboard layout in the macOS menu bar.
+- ⚡ **Instant Switching**: Switch between enabled keyboard layouts with a single click.
+- ⌨️ **Smart Typing Detection**: Automatically hides the cursor indicator while actively typing to avoid distraction.
+- 🚀 **Launch at Login**: Optional setting to automatically launch FlagType when logging in.
+- 🪶 **Native & Lightweight**: Built 100% in pure Swift using AppKit and Carbon. Zero external dependencies, zero analytics, negligible CPU and battery footprint.
 
 ---
 
 ## Installation
 
-### Option 1: Quick Install (Local)
+### Option 1: One-Line Install (Recommended)
 
-Clone the repository and run the build and install scripts:
-
-```bash
-git clone https://github.com/your-username/FlagType.git
-cd FlagType
-./scripts/build.sh
-./scripts/install.sh
-```
-
-### Option 2: Build from Source
-
-Requirements: macOS 13.0+ and Command Line Tools (`xcode-select --install`).
+Run the following command in Terminal to download and install the latest release directly into `/Applications`:
 
 ```bash
-./scripts/build.sh
+curl -fsSL https://raw.githubusercontent.com/freefelt/FlagType/main/scripts/install.sh | bash
 ```
-
-The compiled `FlagType.app` will be created inside the `build/` directory.
 
 ---
 
-## Permissions
+### Option 2: Download from GitHub Releases
 
-FlagType requires **Accessibility** permission in macOS to track the cursor location and detect text inputs across applications.
+1. Download `FlagType.zip` from the latest [GitHub Releases](https://github.com/freefelt/FlagType/releases).
+2. Unzip `FlagType.zip` and move `FlagType.app` to your `/Applications` folder.
+3. Open Terminal and remove the macOS quarantine attribute (since the app is ad-hoc signed without a paid Apple Developer certificate):
+   ```bash
+   xattr -d com.apple.quarantine /Applications/FlagType.app
+   ```
+4. Launch `FlagType.app` from `/Applications` or Spotlight.
 
-On the first launch:
+---
+
+### Option 3: Build from Source
+
+FlagType builds directly using standard macOS Command Line Tools without requiring a full Xcode installation.
+
+**Requirements**:
+- macOS 13.0 (Ventura) or newer
+- Apple Silicon Mac (`arm64`)
+- Command Line Tools (`xcode-select --install`)
+
+```bash
+# Clone the repository
+git clone https://github.com/freefelt/FlagType.git
+cd FlagType
+
+# Run automated tests
+./scripts/test.sh
+
+# Build FlagType.app
+./scripts/build.sh
+
+# Install into /Applications
+./scripts/install.sh
+```
+
+To create a distributable `.zip` release archive with SHA256 checksums:
+```bash
+./scripts/package.sh
+```
+
+---
+
+## Testing
+
+FlagType includes a fast, native Swift test runner covering unit tests and headless AppKit UI tests without requiring third-party testing tools:
+
+```bash
+./scripts/test.sh
+```
+
+The test suite verifies:
+- Cursor geometry math and Retina/vertical I-beam detection
+- Flag image resolution, language code normalization, and fallback text badge generation
+- Settings persistence and toggles
+- Headless AppKit window hierarchy and positioning offsets
+- Menu bar status item initialization
+
+---
+
+## Corporate & Enterprise Usage
+
+FlagType is designed to be fully compliant with corporate IT and enterprise security policies:
+
+- **MIT License**: Free for personal, commercial, and enterprise use on company laptops.
+- **100% Offline**: No network requests, telemetries, or remote analytics of any kind.
+- **Built from Clean Source**: No bundled third-party binary blobs or precompiled libraries.
+- **Accessibility Permissions**: macOS requires Accessibility access exclusively to query the system cursor position (`NSCursor.currentSystem`) and determine when the pointer hovers over text fields. FlagType does not log, inspect, or transmit user keystrokes.
+
+---
+
+## Permissions Setup
+
+On first launch:
 1. Open **System Settings** → **Privacy & Security** → **Accessibility**.
-2. Toggle on **FlagType**.
+2. Toggle the switch for **FlagType**.
+3. (Optional) If you want FlagType to start on boot, click the FlagType menu bar icon and select **Preferences** → **Launch at Login**.
 
 ---
 
 ## Uninstallation
 
-To cleanly remove FlagType and its preferences:
+To completely remove FlagType, its preferences, and any launch agent configurations:
 
 ```bash
 ./scripts/uninstall.sh
@@ -65,4 +124,4 @@ To cleanly remove FlagType and its preferences:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Distributed under the [MIT License](LICENSE).

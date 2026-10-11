@@ -17,7 +17,13 @@
   - Input source switching via `TISSelectInputSource`.
 
 ## Repository Scripts
+- `scripts/test.sh`: Compiles and executes native Swift unit and headless UI test runner.
 - `scripts/build.sh`: Compiles and ad-hoc signs `build/FlagType.app`.
-- `scripts/install.sh`: Deploys to `/Applications/FlagType.app` and strips `com.apple.quarantine`.
+- `scripts/package.sh`: Runs test suite, builds release binary, and packages `build/FlagType.zip` with `SHA256SUMS.txt`.
+- `scripts/install.sh`: Deploys to `/Applications/FlagType.app` (supports local build or remote GitHub release download) and strips `com.apple.quarantine`.
 - `scripts/uninstall.sh`: Terminates app, cleans `/Applications/FlagType.app`, preferences plist, and caches.
 - `scripts/generate_icon.swift`: Generates the modern macOS squircle icon set into `/tmp/FlagType.iconset`.
+
+## Multi-file Swift Compilation Quirk
+- When compiling multiple files using `swiftc` without Xcode, top-level statements are prohibited outside `main.swift`. Test runners and standalone entry points spanning multiple source files must use `@main struct TestRunner { static func main() { ... } }`.
+

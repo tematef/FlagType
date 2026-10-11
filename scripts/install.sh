@@ -10,21 +10,40 @@ NOCOLOR='\033[0m'
 
 APP_NAME="FlagType"
 APP_DESTINATION="/Applications/${APP_NAME}.app"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOCAL_APP="$SCRIPT_DIR/../build/${APP_NAME}.app"
+GITHUB_REPO="${FLAGTYPE_REPO:-freefelt/FlagType}"
 
 printf "${CYAN}============================ Installing ${APP_NAME} =============================\n${NOCOLOR}"
 
 # Kill running instance if any
 pkill -x "$APP_NAME" 2>/dev/null || true
 
-if [ -d "$LOCAL_APP" ]; then
+# Determine install source
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
+LOCAL_APP=""
+
+if [ -n "$SCRIPT_DIR" ] && [ -d "$SCRIPT_DIR/../build/${APP_NAME}.app" ]; then
+    LOCAL_APP="$SCRIPT_DIR/../build/${APP_NAME}.app"
+fi
+
+if [ -n "$LOCAL_APP" ] && [ -d "$LOCAL_APP" ]; then
     printf "${WHITE}- Installing local build from ${YELLOW}$LOCAL_APP\n${NOCOLOR}"
     rm -rf "$APP_DESTINATION"
     cp -R "$LOCAL_APP" "$APP_DESTINATION"
 else
-    printf "${RED}Local build not found at $LOCAL_APP. Please run ./scripts/build.sh first.\n${NOCOLOR}"
-    exit 1
+    printf "${WHITE}- Downloading latest release from GitHub (${GITHUB_REPO})...\n${NOCOLOR}"
+    TMP_DIR=$(mktemp -d)
+    trap 'rm -rf "$TMP_DIR"' EXIT
+    
+    DOWNLOAD_URL="https://github.com/${GITHUB_REPO}/releases/latest/download/${APP_NAME}.zip"
+    curl -fSL "$DOWNLOAD_URL" -o "$TMP_DIR/${APP_NAME}.zip" || {
+        printf "${RED}Failed to download ${APP_NAME}.zip from ${DOWNLOAD_URL}.\n${NOCOLOR}"
+        printf "${YELLOW}If building from source, run: ./scripts/build.sh first.\n${NOCOLOR}"
+        exit 1
+    }
+    
+    printf "${WHITE}- Extracting to /Applications...\n${NOCOLOR}"
+    rm -rf "$APP_DESTINATION"
+    ditto -x -k "$TMP_DIR/${APP_NAME}.zip" /Applications/
 fi
 
 printf "${WHITE}- Removing quarantine attribute... ${NOCOLOR}"
