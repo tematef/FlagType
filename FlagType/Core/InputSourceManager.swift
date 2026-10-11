@@ -16,13 +16,16 @@ struct InputSource: Equatable {
 final class InputSourceManager {
     static let shared = InputSourceManager()
     
-    var onInputSourceChanged: ((InputSource) -> Void)?
+    static let inputSourceChangedNotification = Notification.Name("FlagTypeInputSourceChangedNotification")
     
     private(set) var currentInputSource: InputSource?
     
+    private var keyMonitor: Any?
+    private var pollTimer: Timer?
+    
     private init() {
         refreshCurrentInputSource()
-        setupObserver()
+        setupObservers()
     }
     
     func refreshCurrentInputSource() {
@@ -33,7 +36,12 @@ final class InputSourceManager {
         let info = makeInputSource(from: source)
         if currentInputSource != info {
             currentInputSource = info
-            onInputSourceChanged?(info)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(
+                    name: InputSourceManager.inputSourceChangedNotification,
+                    object: info
+                )
+            }
         }
     }
     
@@ -55,15 +63,46 @@ final class InputSourceManager {
         refreshCurrentInputSource()
     }
     
-    private func setupObserver() {
-        let notificationName = kTISNotifySelectedKeyboardInputSourceChanged as CFString as String
+    private func setupObservers() {
+        // 1. CFNotificationCenter with deliverImmediately
+        CFNotificationCenterAddObserver(
+            CFNotificationCenterGetDistributedCenter(),
+            Unmanaged.passUnretained(self).toOpaque(),
+            { (_, observer, name, _, _) in
+                guard let observer = observer else { return }
+                let manager = Unmanaged<InputSourceManager>.fromOpaque(observer).takeUnretainedValue()
+                DispatchQueue.main.async {
+                    manager.refreshCurrentInputSource()
+                }
+            },
+            kTISNotifySelectedKeyboardInputSourceChanged,
+            nil,
+            .deliverImmediately
+        )
+        
+        // 2. DistributedNotificationCenter with deliverImmediately
+        let notifName = kTISNotifySelectedKeyboardInputSourceChanged as CFString as String
         DistributedNotificationCenter.default().addObserver(
-            forName: NSNotification.Name(notificationName),
+            self,
+            selector: #selector(handleNotification),
+            name: NSNotification.Name(notifName),
             object: nil,
-            queue: .main
-        ) { [weak self] _ in
+            suspensionBehavior: .deliverImmediately
+        )
+        
+        // 3. Global key press & modifier flags monitor (Cmd+Space, Ctrl+Space, Globe, CapsLock)
+        keyMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.flagsChanged, .keyDown]) { [weak self] _ in
             self?.refreshCurrentInputSource()
         }
+        
+        // 4. Fallback lightweight polling timer (0.2s)
+        pollTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
+            self?.refreshCurrentInputSource()
+        }
+    }
+    
+    @objc private func handleNotification() {
+        refreshCurrentInputSource()
     }
     
     private func makeInputSource(from raw: TISInputSource) -> InputSource {

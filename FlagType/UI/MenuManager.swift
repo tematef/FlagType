@@ -24,12 +24,12 @@ final class MenuManager: NSObject {
     }
     
     private func setupInputSourceObserver() {
-        let existing = InputSourceManager.shared.onInputSourceChanged
-        InputSourceManager.shared.onInputSourceChanged = { [weak self] source in
-            existing?(source)
-            DispatchQueue.main.async {
-                self?.updateStatusItem()
-            }
+        NotificationCenter.default.addObserver(
+            forName: InputSourceManager.inputSourceChangedNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.updateStatusItem()
         }
     }
     

@@ -37,12 +37,14 @@ final class CursorIndicatorManager {
     }
     
     private func setupInputSourceObserver() {
-        InputSourceManager.shared.onInputSourceChanged = { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.updateImage()
-                if self?.isVisible == true {
-                    self?.showAtCurrentCursor()
-                }
+        NotificationCenter.default.addObserver(
+            forName: InputSourceManager.inputSourceChangedNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.updateImage()
+            if self?.isVisible == true {
+                self?.showAtCurrentCursor()
             }
         }
     }
