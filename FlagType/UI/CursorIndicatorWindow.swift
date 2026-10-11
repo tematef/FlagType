@@ -39,7 +39,7 @@ final class CursorIndicatorView: NSView {
 
 final class CursorIndicatorWindow: NSWindow {
     private let indicatorView = CursorIndicatorView()
-    static let windowSize = CGSize(width: 22, height: 15)
+    static let windowSize = CGSize(width: 22, height: 16)
     
     init() {
         let contentRect = NSRect(origin: .zero, size: CursorIndicatorWindow.windowSize)

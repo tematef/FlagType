@@ -119,16 +119,60 @@ final class FlagProvider {
         return image
     }
     
+    private func contentBoundingBox(for image: NSImage) -> NSRect {
+        guard let tiff = image.tiffRepresentation,
+              let rep = NSBitmapImageRep(data: tiff) else {
+            return NSRect(origin: .zero, size: image.size)
+        }
+        
+        let width = rep.pixelsWide
+        let height = rep.pixelsHigh
+        guard width > 0 && height > 0 else {
+            return NSRect(origin: .zero, size: image.size)
+        }
+        
+        var minX = width, maxX = 0, minY = height, maxY = 0
+        var foundAny = false
+        
+        for y in 0..<height {
+            for x in 0..<width {
+                if let color = rep.colorAt(x: x, y: y), color.alphaComponent > 0.05 {
+                    foundAny = true
+                    if x < minX { minX = x }
+                    if x > maxX { maxX = x }
+                    if y < minY { minY = y }
+                    if y > maxY { maxY = y }
+                }
+            }
+        }
+        
+        guard foundAny && maxX >= minX && maxY >= minY else {
+            return NSRect(origin: .zero, size: image.size)
+        }
+        
+        let scaleX = image.size.width / CGFloat(width)
+        let scaleY = image.size.height / CGFloat(height)
+        
+        return NSRect(
+            x: CGFloat(minX) * scaleX,
+            y: CGFloat(height - 1 - maxY) * scaleY,
+            width: CGFloat(maxX - minX + 1) * scaleX,
+            height: CGFloat(maxY - minY + 1) * scaleY
+        )
+    }
+    
     private func resize(image: NSImage, targetSize: CGSize) -> NSImage {
+        let contentRect = contentBoundingBox(for: image)
+        
         let newImage = NSImage(size: targetSize)
         newImage.lockFocus()
         
         let rect = NSRect(origin: .zero, size: targetSize)
-        // Draw image with nice aspect ratio and smooth interpolation
         NSGraphicsContext.current?.imageInterpolation = .high
-        image.draw(in: rect, from: NSRect(origin: .zero, size: image.size), operation: .copy, fraction: 1.0)
+        image.draw(in: rect, from: contentRect, operation: .copy, fraction: 1.0)
         
         newImage.unlockFocus()
         return newImage
     }
 }
+

@@ -37,7 +37,7 @@ final class MenuManager: NSObject {
         guard let button = statusItem?.button,
               let current = InputSourceManager.shared.currentInputSource else { return }
         
-        let flag = FlagProvider.shared.flagImage(for: current, size: CGSize(width: 18, height: 12))
+        let flag = FlagProvider.shared.flagImage(for: current, size: CGSize(width: 22, height: 16))
         button.image = flag
         button.imagePosition = .imageLeft
         
@@ -73,7 +73,7 @@ final class MenuManager: NSObject {
             )
             item.target = self
             item.representedObject = source
-            item.image = FlagProvider.shared.flagImage(for: source, size: CGSize(width: 16, height: 11))
+            item.image = FlagProvider.shared.flagImage(for: source, size: CGSize(width: 18, height: 13))
             
             if source == currentSource {
                 item.state = .on
