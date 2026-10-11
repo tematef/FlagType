@@ -1,0 +1,24 @@
+name: FlagType
+options:
+  bundleIdPrefix: com.flagtype
+  deploymentTarget:
+    macOS: "13.0"
+targets:
+  FlagType:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: FlagType
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.flagtype.FlagType
+        PRODUCT_NAME: FlagType
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: FlagType/Info.plist
+        SWIFT_VERSION: "5.0"
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        COMBINE_HIDPI_IMAGES: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual

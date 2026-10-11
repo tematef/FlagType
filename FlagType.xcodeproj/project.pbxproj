@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03055915FBBD9FFC38EB795C /* com.apple.keylayout.Canadian.png in Resources */ = {isa = PBXBuildFile; fileRef = D4D1ED3432245D3BC35F81DA /* com.apple.keylayout.Canadian.png */; };
+		05FF40185C052E9DB6110E8B /* com.apple.keylayout.SwissGerman.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B2FE337179C0D6636C0A8AF /* com.apple.keylayout.SwissGerman.png */; };
+		06FE835B36D5147513173679 /* com.apple.keylayout.Danish.png in Resources */ = {isa = PBXBuildFile; fileRef = 264583670E1AB527ED8AAB75 /* com.apple.keylayout.Danish.png */; };
+		070952091BBB772A72ACE313 /* CursorIndicatorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA6CA94C2C996F09B62B83 /* CursorIndicatorWindow.swift */; };
+		0F9CBC0DA4EB1DFBAC3AE96C /* com.apple.keylayout.NorwegianSami-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 743B10742749C940E74EDBDA /* com.apple.keylayout.NorwegianSami-PC.png */; };
+		0FC666238E1C77CF4F4515F3 /* com.apple.keylayout.Austrian.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C848EE2143A36E35B6D40E2 /* com.apple.keylayout.Austrian.png */; };
+		101EA45908EEA647EA99ADD4 /* com.apple.keylayout.SwissFrench.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE95622223BE9251434B423 /* com.apple.keylayout.SwissFrench.png */; };
+		1101B2EA17127F185B34EE36 /* com.apple.keylayout.Ukrainian.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F5FFBEA71E34F5DD2847FFE /* com.apple.keylayout.Ukrainian.png */; };
+		148539AA7FAF2ABC417EAB75 /* com.apple.keylayout.Estonian.png in Resources */ = {isa = PBXBuildFile; fileRef = F571759E28F1E838B9C74D0B /* com.apple.keylayout.Estonian.png */; };
+		16E8E1511AEA1F662BA249BB /* com.apple.keylayout.Croatian-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D01F0D86CA9F8027E7B3C4A /* com.apple.keylayout.Croatian-PC.png */; };
+		19767146CD84A6EBAFF4569A /* com.apple.keylayout.Belgian.png in Resources */ = {isa = PBXBuildFile; fileRef = 632FCDABD2AA4B0870495B65 /* com.apple.keylayout.Belgian.png */; };
+		1BEF88C5A945CE12CCECEBDB /* com.apple.keylayout.Brazilian-ABNT2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C91A5F3D142336B259ED77C /* com.apple.keylayout.Brazilian-ABNT2.png */; };
+		1E3D96DAA53100EC36914240 /* com.apple.keylayout.USInternational-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9072DEF30708E59FCA3030 /* com.apple.keylayout.USInternational-PC.png */; };
+		2299D2FE20762ACB1D55703D /* com.apple.keylayout.US.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6BDEE5A980DFAB98EC019B /* com.apple.keylayout.US.png */; };
+		22F8BAB3B49BEC33210917A5 /* com.apple.keylayout.Sami-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 20C2E0B4BC583CCAEB23279F /* com.apple.keylayout.Sami-PC.png */; };
+		253774D479AF78E379094B21 /* com.apple.keylayout.Spanish-ISO.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C37F488C5DA82CC69EFC549 /* com.apple.keylayout.Spanish-ISO.png */; };
+		262F1BAEFE433E10FFC7859E /* com.apple.keylayout.Turkish-QWERTY-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 652774B3EE3F072A5743DBB8 /* com.apple.keylayout.Turkish-QWERTY-PC.png */; };
+		26537FD78B5E4B406299753C /* com.apple.keylayout.NorwegianExtended.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A1F21BEDE26D926157854B /* com.apple.keylayout.NorwegianExtended.png */; };
+		2C4C8E430661E394FE10A753 /* com.apple.keylayout.Canadian-CSA.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C6FD049131FD13B1029A01 /* com.apple.keylayout.Canadian-CSA.png */; };
+		33BEE040A12834BC55D824E5 /* com.apple.keylayout.Maori.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E71AAA95ADF84358C5AEA67 /* com.apple.keylayout.Maori.png */; };
+		355B2BAC0C6AD9408AF7154E /* com.apple.keylayout.Romanian.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5138E27BA94E4AAD2119CE /* com.apple.keylayout.Romanian.png */; };
+		37B27857742ABC3FCE37E701 /* com.apple.keylayout.Italian-Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C536ECDAE0585F5C4440D9 /* com.apple.keylayout.Italian-Pro.png */; };
+		39DB9D79EE7DEE128F5DCB46 /* com.apple.keylayout.FinnishSami-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = C0291452FD5D4E3483D829A8 /* com.apple.keylayout.FinnishSami-PC.png */; };
+		3BA0AD6920865A55850211DF /* com.apple.keylayout.French-numerical.png in Resources */ = {isa = PBXBuildFile; fileRef = C7F5A7559A85D11804BA64D7 /* com.apple.keylayout.French-numerical.png */; };
+		3F17C2122230FA5F7263BC57 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5C74EE8E5223EF896CE7C /* Settings.swift */; };
+		4160A8FF6F20D0A0D82FD31C /* com.apple.keylayout.Welsh.png in Resources */ = {isa = PBXBuildFile; fileRef = B437CBA3726082A9C123BD87 /* com.apple.keylayout.Welsh.png */; };
+		442F0F52BFA95D1593AFA6D0 /* com.apple.keylayout.French.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EAEE307D0E3B7E998573D2 /* com.apple.keylayout.French.png */; };
+		449DE414D597F9B654F1B290 /* com.apple.keylayout.Spanish.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B350DE2BF058497FD9A0E0F /* com.apple.keylayout.Spanish.png */; };
+		47A3E909BC85417170922130 /* FlagProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66A4F5CE7E35DA16EF9743 /* FlagProvider.swift */; };
+		483A7E8FB29FF469E182F621 /* com.apple.keylayout.Russian-Phonetic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE4D03E323FE431A91E7F1 /* com.apple.keylayout.Russian-Phonetic.png */; };
+		4B6709826AC1D476F9A780D9 /* com.apple.keylayout.Brazilian-Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA41AB40B823AEF4FC4260A /* com.apple.keylayout.Brazilian-Pro.png */; };
+		4BC058C2D1623496C32AA3A2 /* com.apple.keylayout.PolishPro.png in Resources */ = {isa = PBXBuildFile; fileRef = 999B12349102129EC242E58E /* com.apple.keylayout.PolishPro.png */; };
+		56CE352D1B05615C79E2DC3B /* com.apple.keylayout.Bulgarian-Phonetic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A591C0156738D04CD91A280 /* com.apple.keylayout.Bulgarian-Phonetic.png */; };
+		59730A5B2A1811B9603E9CF3 /* com.apple.keylayout.Azeri.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1A58262893EDEF9A852254 /* com.apple.keylayout.Azeri.png */; };
+		622D700D94F9A34E45091608 /* com.apple.keylayout.Swedish-Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E4DECD8B18B6A64B261A20 /* com.apple.keylayout.Swedish-Pro.png */; };
+		63C66B74340BCDEEEB129662 /* com.apple.keylayout.Turkish-Standard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299D0B30EBA2ED7150A1496 /* com.apple.keylayout.Turkish-Standard.png */; };
+		64566C1E886EE375842C5E90 /* com.apple.keylayout.RussianWin.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E15CB262CE431D117CC0A5 /* com.apple.keylayout.RussianWin.png */; };
+		656303EC4948BE84E53DF4BA /* com.apple.keylayout.Slovak-QWERTY.png in Resources */ = {isa = PBXBuildFile; fileRef = F35BDC2A61037CE9B020F7F0 /* com.apple.keylayout.Slovak-QWERTY.png */; };
+		68DFCC1D75484C56BB4C33A6 /* com.apple.keylayout.Byelorussian.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6B8D87D67870653D40C194 /* com.apple.keylayout.Byelorussian.png */; };
+		694A5606B110F4803B1C200C /* com.apple.keylayout.Hungarian-QWERTY.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B10A8E776AC7BA921178C44 /* com.apple.keylayout.Hungarian-QWERTY.png */; };
+		6A54864C708910E50AB90888 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D460BE455DA09E4E3406F303 /* AppIcon.icns */; };
+		6C93EA35CD2D264631790ED2 /* com.apple.keylayout.German.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2F9A694B7A4A84BD513307 /* com.apple.keylayout.German.png */; };
+		75E9F629B041F9F9FFB0B6CE /* com.apple.keylayout.Tongan.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F3C49C1D727CEEF8BF10EE9 /* com.apple.keylayout.Tongan.png */; };
+		76E30EF6E2E51EA9D364D33A /* com.apple.keylayout.Slovenian.png in Resources */ = {isa = PBXBuildFile; fileRef = 521BB991BDC7D1621F894294 /* com.apple.keylayout.Slovenian.png */; };
+		7D7AFF124C19235352CCB3D8 /* com.apple.keylayout.Italian.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D0E7F899BD96E258EB5F1D5 /* com.apple.keylayout.Italian.png */; };
+		7D8056F2C5AAB66378C7538F /* com.apple.keylayout.Serbian-Latin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0187956AE69E3A05004289 /* com.apple.keylayout.Serbian-Latin.png */; };
+		8063F29D1E9BF3DD1EA1C7D3 /* com.apple.keylayout.Brazilian.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B8B93E31169CAAE34DED132 /* com.apple.keylayout.Brazilian.png */; };
+		84EFB4F7958A68AB4C292DB3 /* com.apple.keylayout.Swedish.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB85A7083E702364A02E5CF /* com.apple.keylayout.Swedish.png */; };
+		88FE52599D5E8E14B8A4C66A /* com.apple.keylayout.Dutch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE701345EF4015A4BD6D30 /* com.apple.keylayout.Dutch.png */; };
+		8B1D449FDCB158CB1DD96408 /* com.apple.keylayout.Faroese.png in Resources */ = {isa = PBXBuildFile; fileRef = D7E5AB667A12B4D0E4BC12AB /* com.apple.keylayout.Faroese.png */; };
+		95EB425775BA7F8D17D6BD1F /* com.apple.keylayout.Serbian.png in Resources */ = {isa = PBXBuildFile; fileRef = 0387878B2D0ACDFDEE43A1A4 /* com.apple.keylayout.Serbian.png */; };
+		96EDC8D5C8930DA939FB0416 /* com.apple.keylayout.Lithuanian.png in Resources */ = {isa = PBXBuildFile; fileRef = D33A17058E5645E2F2745029 /* com.apple.keylayout.Lithuanian.png */; };
+		9B45F3091FDBD8D297CE8055 /* com.apple.keylayout.Hawaiian.png in Resources */ = {isa = PBXBuildFile; fileRef = 4023CD0303C53BBA80971EA2 /* com.apple.keylayout.Hawaiian.png */; };
+		9ED9333261324AF2E668E601 /* com.apple.keylayout.Turkish-QWERTY.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F6151F1F7FBFCC233E01F9 /* com.apple.keylayout.Turkish-QWERTY.png */; };
+		9F7D3ED40321A7341A5AC942 /* com.apple.keylayout.Croatian.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC0CF990BE6CE2BB444E99F /* com.apple.keylayout.Croatian.png */; };
+		A412548F3B43AA566414887A /* com.apple.keylayout.Kazakh.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E4A48BF7BC3BCBA20B8A58 /* com.apple.keylayout.Kazakh.png */; };
+		AC9FF2A7C717EFE58F39582C /* com.apple.keylayout.Ukrainian-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC332715343F9AE11831AA0 /* com.apple.keylayout.Ukrainian-PC.png */; };
+		ACE66A28EDADD1AAB23098AE /* com.apple.keylayout.Bulgarian.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9476B56D110C6572F30011 /* com.apple.keylayout.Bulgarian.png */; };
+		AD311DC25F2114AA36C93F37 /* CursorIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A678EBE557A0530BEA898C /* CursorIndicatorManager.swift */; };
+		B06BE5EFF342D902237217D9 /* com.apple.keylayout.Slovak.png in Resources */ = {isa = PBXBuildFile; fileRef = D3ADC1AC8D792C87FD523CF7 /* com.apple.keylayout.Slovak.png */; };
+		B2CC979DE8CC63C92D20F12B /* com.apple.keylayout.Hungarian.png in Resources */ = {isa = PBXBuildFile; fileRef = 5070E149F817D9B8331A5B36 /* com.apple.keylayout.Hungarian.png */; };
+		B51BA28A8F41A767BBFC333D /* com.apple.keylayout.Finnish.png in Resources */ = {isa = PBXBuildFile; fileRef = B80F9CB9A71B19C8728F6322 /* com.apple.keylayout.Finnish.png */; };
+		B5833623DA4C8ADDB9B9E524 /* com.apple.keylayout.Romanian-Standard.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C6FDF4EFF2268462CFFBC8 /* com.apple.keylayout.Romanian-Standard.png */; };
+		B74C24F50A52DD8BA5309D4B /* com.apple.keylayout.Polish.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBEA9444D5D92DEB5717658 /* com.apple.keylayout.Polish.png */; };
+		BADE055AFEFA1CAA0DDECB57 /* com.apple.keylayout.Maltese.png in Resources */ = {isa = PBXBuildFile; fileRef = 24646ABED4CCC1D6E01A20E5 /* com.apple.keylayout.Maltese.png */; };
+		BF8CE7B61357C3C05656A8D2 /* com.apple.keylayout.Russian.png in Resources */ = {isa = PBXBuildFile; fileRef = 8052A2AE35B6A5FA0DFCE3EF /* com.apple.keylayout.Russian.png */; };
+		C1EAA7B44121C01D55968605 /* com.apple.keylayout.SwedishSami-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 3826ACF84ACBDE815B522471 /* com.apple.keylayout.SwedishSami-PC.png */; };
+		CB7B03A5DDC2D6F125BDB847 /* com.apple.keylayout.FinnishExtended.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A131271162284D790A18B /* com.apple.keylayout.FinnishExtended.png */; };
+		CE4FFF0833159790CE1797A8 /* com.apple.keylayout.British-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2BB869BC6E07225425F82C /* com.apple.keylayout.British-PC.png */; };
+		D5561AE2DCA0AEDCEE88FA95 /* com.apple.keylayout.Latvian.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C70C5C71A11813CBEEF7C /* com.apple.keylayout.Latvian.png */; };
+		D5A61626E198F483F5C7069A /* com.apple.keylayout.Norwegian.png in Resources */ = {isa = PBXBuildFile; fileRef = 69E6EAF3E2C5FB09A0CE6ECF /* com.apple.keylayout.Norwegian.png */; };
+		D8E060F695814E2664CD0886 /* com.apple.keylayout.IrishExtended.png in Resources */ = {isa = PBXBuildFile; fileRef = 77747C92E1135CCE2B7CC0B0 /* com.apple.keylayout.IrishExtended.png */; };
+		DA74374E03DAEAE962A18865 /* com.apple.keylayout.Czech.png in Resources */ = {isa = PBXBuildFile; fileRef = C28CCE2F621367930C308011 /* com.apple.keylayout.Czech.png */; };
+		DBBB8B3A6D9CA760CDD4CF92 /* com.apple.keylayout.Icelandic.png in Resources */ = {isa = PBXBuildFile; fileRef = DC708BE6EFC83809D77A235A /* com.apple.keylayout.Icelandic.png */; };
+		DC44A7FA9CD718F057D907B4 /* com.apple.keylayout.Czech-QWERTY.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA4850772ECA891CBC4031B /* com.apple.keylayout.Czech-QWERTY.png */; };
+		DEBE775322B9D6395F5C9A7F /* com.apple.keylayout.NorthernSami.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D6EEA5B517EDF598BA253 /* com.apple.keylayout.NorthernSami.png */; };
+		E1C4521334077E3FBC068505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90978334051DECB65C91BCD2 /* AppDelegate.swift */; };
+		E277F647C5BBC77168109B1D /* com.apple.keylayout.Turkish.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1005CFF6C7D69B8CDD653C /* com.apple.keylayout.Turkish.png */; };
+		E53A719F1CEE28BE7DB8EB56 /* com.apple.keylayout.Australian.png in Resources */ = {isa = PBXBuildFile; fileRef = 85275646D7F184DC27489622 /* com.apple.keylayout.Australian.png */; };
+		E7B1C5CE1F220D3733FF579E /* InputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308910E164F00509AF36CBDE /* InputSourceManager.swift */; };
+		ECC30061B9F8054F91CAC2CA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7037A7D9A5615DB27E6D /* main.swift */; };
+		EFD808BC3466B70A4D2C10D8 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5B10A1CA23D4EBB2B7F0B1 /* MenuManager.swift */; };
+		F5ADE0E91C23C0E5D27362FA /* com.apple.keylayout.French-PC.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE65B4B943D22D70B97490C /* com.apple.keylayout.French-PC.png */; };
+		F5C17B20F5330AA085971628 /* com.apple.keylayout.German-DIN-2137.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DD5D765343D0342D118670 /* com.apple.keylayout.German-DIN-2137.png */; };
+		F6FB1586DC3604661636C2D8 /* com.apple.keylayout.Vietnamese.png in Resources */ = {isa = PBXBuildFile; fileRef = B365EC3DC0E11497E907EAAC /* com.apple.keylayout.Vietnamese.png */; };
+		F7E025951006388F301CC2A5 /* com.apple.keylayout.Irish.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFF2912E9D0E32E8912A20E /* com.apple.keylayout.Irish.png */; };
+		FA29E668A3EFF79CF5CC65D5 /* com.apple.keylayout.Macedonian.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0125BBE5A637C895AD937A /* com.apple.keylayout.Macedonian.png */; };
+		FC81E68267D657CADC72D599 /* com.apple.keylayout.Portuguese.png in Resources */ = {isa = PBXBuildFile; fileRef = 89977228881DD14343753CB9 /* com.apple.keylayout.Portuguese.png */; };
+		FF1B1DBAB9AA2DE9C5854196 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75563D764FFDE543DED3736A /* Assets.xcassets */; };
+		FF823BC558F0E48319E263B2 /* com.apple.keylayout.British.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CC76C8E435EB678E4E897C /* com.apple.keylayout.British.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		032A131271162284D790A18B /* com.apple.keylayout.FinnishExtended.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.FinnishExtended.png; sourceTree = "<group>"; };
+		0387878B2D0ACDFDEE43A1A4 /* com.apple.keylayout.Serbian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Serbian.png; sourceTree = "<group>"; };
+		0A2F9A694B7A4A84BD513307 /* com.apple.keylayout.German.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.German.png; sourceTree = "<group>"; };
+		0A591C0156738D04CD91A280 /* com.apple.keylayout.Bulgarian-Phonetic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Bulgarian-Phonetic.png"; sourceTree = "<group>"; };
+		12AA6CA94C2C996F09B62B83 /* CursorIndicatorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorIndicatorWindow.swift; sourceTree = "<group>"; };
+		20C2E0B4BC583CCAEB23279F /* com.apple.keylayout.Sami-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Sami-PC.png"; sourceTree = "<group>"; };
+		24646ABED4CCC1D6E01A20E5 /* com.apple.keylayout.Maltese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Maltese.png; sourceTree = "<group>"; };
+		264583670E1AB527ED8AAB75 /* com.apple.keylayout.Danish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Danish.png; sourceTree = "<group>"; };
+		29CC76C8E435EB678E4E897C /* com.apple.keylayout.British.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.British.png; sourceTree = "<group>"; };
+		2C91A5F3D142336B259ED77C /* com.apple.keylayout.Brazilian-ABNT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Brazilian-ABNT2.png"; sourceTree = "<group>"; };
+		2D5E7037A7D9A5615DB27E6D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		308910E164F00509AF36CBDE /* InputSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceManager.swift; sourceTree = "<group>"; };
+		30EAEE307D0E3B7E998573D2 /* com.apple.keylayout.French.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.French.png; sourceTree = "<group>"; };
+		376D88C8F979C69BFE9B8CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3826ACF84ACBDE815B522471 /* com.apple.keylayout.SwedishSami-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.SwedishSami-PC.png"; sourceTree = "<group>"; };
+		3A5B10A1CA23D4EBB2B7F0B1 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		3B2BB869BC6E07225425F82C /* com.apple.keylayout.British-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.British-PC.png"; sourceTree = "<group>"; };
+		3C27A3B8BEDF7CA220D935B9 /* FlagType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagType.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0187956AE69E3A05004289 /* com.apple.keylayout.Serbian-Latin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Serbian-Latin.png"; sourceTree = "<group>"; };
+		3E9476B56D110C6572F30011 /* com.apple.keylayout.Bulgarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Bulgarian.png; sourceTree = "<group>"; };
+		3EDE4D03E323FE431A91E7F1 /* com.apple.keylayout.Russian-Phonetic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Russian-Phonetic.png"; sourceTree = "<group>"; };
+		4023CD0303C53BBA80971EA2 /* com.apple.keylayout.Hawaiian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Hawaiian.png; sourceTree = "<group>"; };
+		49DD5D765343D0342D118670 /* com.apple.keylayout.German-DIN-2137.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.German-DIN-2137.png"; sourceTree = "<group>"; };
+		4C848EE2143A36E35B6D40E2 /* com.apple.keylayout.Austrian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Austrian.png; sourceTree = "<group>"; };
+		4D01F0D86CA9F8027E7B3C4A /* com.apple.keylayout.Croatian-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Croatian-PC.png"; sourceTree = "<group>"; };
+		5070E149F817D9B8331A5B36 /* com.apple.keylayout.Hungarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Hungarian.png; sourceTree = "<group>"; };
+		521BB991BDC7D1621F894294 /* com.apple.keylayout.Slovenian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Slovenian.png; sourceTree = "<group>"; };
+		5DEE701345EF4015A4BD6D30 /* com.apple.keylayout.Dutch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Dutch.png; sourceTree = "<group>"; };
+		5FB85A7083E702364A02E5CF /* com.apple.keylayout.Swedish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Swedish.png; sourceTree = "<group>"; };
+		632FCDABD2AA4B0870495B65 /* com.apple.keylayout.Belgian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Belgian.png; sourceTree = "<group>"; };
+		652774B3EE3F072A5743DBB8 /* com.apple.keylayout.Turkish-QWERTY-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Turkish-QWERTY-PC.png"; sourceTree = "<group>"; };
+		69E6EAF3E2C5FB09A0CE6ECF /* com.apple.keylayout.Norwegian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Norwegian.png; sourceTree = "<group>"; };
+		6E0125BBE5A637C895AD937A /* com.apple.keylayout.Macedonian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Macedonian.png; sourceTree = "<group>"; };
+		6E8D6EEA5B517EDF598BA253 /* com.apple.keylayout.NorthernSami.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.NorthernSami.png; sourceTree = "<group>"; };
+		6F3C49C1D727CEEF8BF10EE9 /* com.apple.keylayout.Tongan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Tongan.png; sourceTree = "<group>"; };
+		73E4A48BF7BC3BCBA20B8A58 /* com.apple.keylayout.Kazakh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Kazakh.png; sourceTree = "<group>"; };
+		743B10742749C940E74EDBDA /* com.apple.keylayout.NorwegianSami-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.NorwegianSami-PC.png"; sourceTree = "<group>"; };
+		75563D764FFDE543DED3736A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77747C92E1135CCE2B7CC0B0 /* com.apple.keylayout.IrishExtended.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.IrishExtended.png; sourceTree = "<group>"; };
+		7B350DE2BF058497FD9A0E0F /* com.apple.keylayout.Spanish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Spanish.png; sourceTree = "<group>"; };
+		7B8B93E31169CAAE34DED132 /* com.apple.keylayout.Brazilian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Brazilian.png; sourceTree = "<group>"; };
+		7D0E7F899BD96E258EB5F1D5 /* com.apple.keylayout.Italian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Italian.png; sourceTree = "<group>"; };
+		7E71AAA95ADF84358C5AEA67 /* com.apple.keylayout.Maori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Maori.png; sourceTree = "<group>"; };
+		7F5FFBEA71E34F5DD2847FFE /* com.apple.keylayout.Ukrainian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Ukrainian.png; sourceTree = "<group>"; };
+		8052A2AE35B6A5FA0DFCE3EF /* com.apple.keylayout.Russian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Russian.png; sourceTree = "<group>"; };
+		85275646D7F184DC27489622 /* com.apple.keylayout.Australian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Australian.png; sourceTree = "<group>"; };
+		86C6FD049131FD13B1029A01 /* com.apple.keylayout.Canadian-CSA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Canadian-CSA.png"; sourceTree = "<group>"; };
+		89977228881DD14343753CB9 /* com.apple.keylayout.Portuguese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Portuguese.png; sourceTree = "<group>"; };
+		8B10A8E776AC7BA921178C44 /* com.apple.keylayout.Hungarian-QWERTY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Hungarian-QWERTY.png"; sourceTree = "<group>"; };
+		8B2FE337179C0D6636C0A8AF /* com.apple.keylayout.SwissGerman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.SwissGerman.png; sourceTree = "<group>"; };
+		8B6BDEE5A980DFAB98EC019B /* com.apple.keylayout.US.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.US.png; sourceTree = "<group>"; };
+		8E5138E27BA94E4AAD2119CE /* com.apple.keylayout.Romanian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Romanian.png; sourceTree = "<group>"; };
+		90978334051DECB65C91BCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9299D0B30EBA2ED7150A1496 /* com.apple.keylayout.Turkish-Standard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Turkish-Standard.png"; sourceTree = "<group>"; };
+		95F6151F1F7FBFCC233E01F9 /* com.apple.keylayout.Turkish-QWERTY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Turkish-QWERTY.png"; sourceTree = "<group>"; };
+		999B12349102129EC242E58E /* com.apple.keylayout.PolishPro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.PolishPro.png; sourceTree = "<group>"; };
+		9A1A58262893EDEF9A852254 /* com.apple.keylayout.Azeri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Azeri.png; sourceTree = "<group>"; };
+		9BA41AB40B823AEF4FC4260A /* com.apple.keylayout.Brazilian-Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Brazilian-Pro.png"; sourceTree = "<group>"; };
+		9C37F488C5DA82CC69EFC549 /* com.apple.keylayout.Spanish-ISO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Spanish-ISO.png"; sourceTree = "<group>"; };
+		9E66A4F5CE7E35DA16EF9743 /* FlagProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagProvider.swift; sourceTree = "<group>"; };
+		A0A678EBE557A0530BEA898C /* CursorIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorIndicatorManager.swift; sourceTree = "<group>"; };
+		A8C5C74EE8E5223EF896CE7C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AE9072DEF30708E59FCA3030 /* com.apple.keylayout.USInternational-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.USInternational-PC.png"; sourceTree = "<group>"; };
+		AEE65B4B943D22D70B97490C /* com.apple.keylayout.French-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.French-PC.png"; sourceTree = "<group>"; };
+		AF6B8D87D67870653D40C194 /* com.apple.keylayout.Byelorussian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Byelorussian.png; sourceTree = "<group>"; };
+		AFC332715343F9AE11831AA0 /* com.apple.keylayout.Ukrainian-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Ukrainian-PC.png"; sourceTree = "<group>"; };
+		B365EC3DC0E11497E907EAAC /* com.apple.keylayout.Vietnamese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Vietnamese.png; sourceTree = "<group>"; };
+		B437CBA3726082A9C123BD87 /* com.apple.keylayout.Welsh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Welsh.png; sourceTree = "<group>"; };
+		B5A1F21BEDE26D926157854B /* com.apple.keylayout.NorwegianExtended.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.NorwegianExtended.png; sourceTree = "<group>"; };
+		B80F9CB9A71B19C8728F6322 /* com.apple.keylayout.Finnish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Finnish.png; sourceTree = "<group>"; };
+		BCE95622223BE9251434B423 /* com.apple.keylayout.SwissFrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.SwissFrench.png; sourceTree = "<group>"; };
+		C0291452FD5D4E3483D829A8 /* com.apple.keylayout.FinnishSami-PC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.FinnishSami-PC.png"; sourceTree = "<group>"; };
+		C0E15CB262CE431D117CC0A5 /* com.apple.keylayout.RussianWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.RussianWin.png; sourceTree = "<group>"; };
+		C28CCE2F621367930C308011 /* com.apple.keylayout.Czech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Czech.png; sourceTree = "<group>"; };
+		C7C6FDF4EFF2268462CFFBC8 /* com.apple.keylayout.Romanian-Standard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Romanian-Standard.png"; sourceTree = "<group>"; };
+		C7F5A7559A85D11804BA64D7 /* com.apple.keylayout.French-numerical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.French-numerical.png"; sourceTree = "<group>"; };
+		CEC0CF990BE6CE2BB444E99F /* com.apple.keylayout.Croatian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Croatian.png; sourceTree = "<group>"; };
+		CEFF2912E9D0E32E8912A20E /* com.apple.keylayout.Irish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Irish.png; sourceTree = "<group>"; };
+		D33A17058E5645E2F2745029 /* com.apple.keylayout.Lithuanian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Lithuanian.png; sourceTree = "<group>"; };
+		D3ADC1AC8D792C87FD523CF7 /* com.apple.keylayout.Slovak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Slovak.png; sourceTree = "<group>"; };
+		D460BE455DA09E4E3406F303 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		D4D1ED3432245D3BC35F81DA /* com.apple.keylayout.Canadian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Canadian.png; sourceTree = "<group>"; };
+		D7E5AB667A12B4D0E4BC12AB /* com.apple.keylayout.Faroese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Faroese.png; sourceTree = "<group>"; };
+		DC708BE6EFC83809D77A235A /* com.apple.keylayout.Icelandic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Icelandic.png; sourceTree = "<group>"; };
+		DD1005CFF6C7D69B8CDD653C /* com.apple.keylayout.Turkish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Turkish.png; sourceTree = "<group>"; };
+		E76C70C5C71A11813CBEEF7C /* com.apple.keylayout.Latvian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Latvian.png; sourceTree = "<group>"; };
+		E7E4DECD8B18B6A64B261A20 /* com.apple.keylayout.Swedish-Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Swedish-Pro.png"; sourceTree = "<group>"; };
+		EBBEA9444D5D92DEB5717658 /* com.apple.keylayout.Polish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Polish.png; sourceTree = "<group>"; };
+		ECA4850772ECA891CBC4031B /* com.apple.keylayout.Czech-QWERTY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Czech-QWERTY.png"; sourceTree = "<group>"; };
+		F2C536ECDAE0585F5C4440D9 /* com.apple.keylayout.Italian-Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Italian-Pro.png"; sourceTree = "<group>"; };
+		F35BDC2A61037CE9B020F7F0 /* com.apple.keylayout.Slovak-QWERTY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com.apple.keylayout.Slovak-QWERTY.png"; sourceTree = "<group>"; };
+		F571759E28F1E838B9C74D0B /* com.apple.keylayout.Estonian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com.apple.keylayout.Estonian.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		25BF9EEF9BAE35CECE175C39 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9E66A4F5CE7E35DA16EF9743 /* FlagProvider.swift */,
+				308910E164F00509AF36CBDE /* InputSourceManager.swift */,
+				A8C5C74EE8E5223EF896CE7C /* Settings.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5093D92A714C83F8EF9A8030 = {
+			isa = PBXGroup;
+			children = (
+				71AC388ED5D0D7CCBBEA5E83 /* FlagType */,
+				9E6C596CCA6DC88A1D11764F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71AC388ED5D0D7CCBBEA5E83 /* FlagType */ = {
+			isa = PBXGroup;
+			children = (
+				90978334051DECB65C91BCD2 /* AppDelegate.swift */,
+				376D88C8F979C69BFE9B8CB7 /* Info.plist */,
+				2D5E7037A7D9A5615DB27E6D /* main.swift */,
+				25BF9EEF9BAE35CECE175C39 /* Core */,
+				7B77385BF5207D3877C193F1 /* Resources */,
+				931308B8541CA011075F6EFE /* UI */,
+			);
+			path = FlagType;
+			sourceTree = "<group>";
+		};
+		7B77385BF5207D3877C193F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D460BE455DA09E4E3406F303 /* AppIcon.icns */,
+				75563D764FFDE543DED3736A /* Assets.xcassets */,
+				800FD56F78E9B32451AEAAE7 /* Flags */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		800FD56F78E9B32451AEAAE7 /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				85275646D7F184DC27489622 /* com.apple.keylayout.Australian.png */,
+				4C848EE2143A36E35B6D40E2 /* com.apple.keylayout.Austrian.png */,
+				9A1A58262893EDEF9A852254 /* com.apple.keylayout.Azeri.png */,
+				632FCDABD2AA4B0870495B65 /* com.apple.keylayout.Belgian.png */,
+				2C91A5F3D142336B259ED77C /* com.apple.keylayout.Brazilian-ABNT2.png */,
+				9BA41AB40B823AEF4FC4260A /* com.apple.keylayout.Brazilian-Pro.png */,
+				7B8B93E31169CAAE34DED132 /* com.apple.keylayout.Brazilian.png */,
+				3B2BB869BC6E07225425F82C /* com.apple.keylayout.British-PC.png */,
+				29CC76C8E435EB678E4E897C /* com.apple.keylayout.British.png */,
+				0A591C0156738D04CD91A280 /* com.apple.keylayout.Bulgarian-Phonetic.png */,
+				3E9476B56D110C6572F30011 /* com.apple.keylayout.Bulgarian.png */,
+				AF6B8D87D67870653D40C194 /* com.apple.keylayout.Byelorussian.png */,
+				86C6FD049131FD13B1029A01 /* com.apple.keylayout.Canadian-CSA.png */,
+				D4D1ED3432245D3BC35F81DA /* com.apple.keylayout.Canadian.png */,
+				4D01F0D86CA9F8027E7B3C4A /* com.apple.keylayout.Croatian-PC.png */,
+				CEC0CF990BE6CE2BB444E99F /* com.apple.keylayout.Croatian.png */,
+				ECA4850772ECA891CBC4031B /* com.apple.keylayout.Czech-QWERTY.png */,
+				C28CCE2F621367930C308011 /* com.apple.keylayout.Czech.png */,
+				264583670E1AB527ED8AAB75 /* com.apple.keylayout.Danish.png */,
+				5DEE701345EF4015A4BD6D30 /* com.apple.keylayout.Dutch.png */,
+				F571759E28F1E838B9C74D0B /* com.apple.keylayout.Estonian.png */,
+				D7E5AB667A12B4D0E4BC12AB /* com.apple.keylayout.Faroese.png */,
+				B80F9CB9A71B19C8728F6322 /* com.apple.keylayout.Finnish.png */,
+				032A131271162284D790A18B /* com.apple.keylayout.FinnishExtended.png */,
+				C0291452FD5D4E3483D829A8 /* com.apple.keylayout.FinnishSami-PC.png */,
+				C7F5A7559A85D11804BA64D7 /* com.apple.keylayout.French-numerical.png */,
+				AEE65B4B943D22D70B97490C /* com.apple.keylayout.French-PC.png */,
+				30EAEE307D0E3B7E998573D2 /* com.apple.keylayout.French.png */,
+				49DD5D765343D0342D118670 /* com.apple.keylayout.German-DIN-2137.png */,
+				0A2F9A694B7A4A84BD513307 /* com.apple.keylayout.German.png */,
+				4023CD0303C53BBA80971EA2 /* com.apple.keylayout.Hawaiian.png */,
+				8B10A8E776AC7BA921178C44 /* com.apple.keylayout.Hungarian-QWERTY.png */,
+				5070E149F817D9B8331A5B36 /* com.apple.keylayout.Hungarian.png */,
+				DC708BE6EFC83809D77A235A /* com.apple.keylayout.Icelandic.png */,
+				CEFF2912E9D0E32E8912A20E /* com.apple.keylayout.Irish.png */,
+				77747C92E1135CCE2B7CC0B0 /* com.apple.keylayout.IrishExtended.png */,
+				F2C536ECDAE0585F5C4440D9 /* com.apple.keylayout.Italian-Pro.png */,
+				7D0E7F899BD96E258EB5F1D5 /* com.apple.keylayout.Italian.png */,
+				73E4A48BF7BC3BCBA20B8A58 /* com.apple.keylayout.Kazakh.png */,
+				E76C70C5C71A11813CBEEF7C /* com.apple.keylayout.Latvian.png */,
+				D33A17058E5645E2F2745029 /* com.apple.keylayout.Lithuanian.png */,
+				6E0125BBE5A637C895AD937A /* com.apple.keylayout.Macedonian.png */,
+				24646ABED4CCC1D6E01A20E5 /* com.apple.keylayout.Maltese.png */,
+				7E71AAA95ADF84358C5AEA67 /* com.apple.keylayout.Maori.png */,
+				6E8D6EEA5B517EDF598BA253 /* com.apple.keylayout.NorthernSami.png */,
+				69E6EAF3E2C5FB09A0CE6ECF /* com.apple.keylayout.Norwegian.png */,
+				B5A1F21BEDE26D926157854B /* com.apple.keylayout.NorwegianExtended.png */,
+				743B10742749C940E74EDBDA /* com.apple.keylayout.NorwegianSami-PC.png */,
+				EBBEA9444D5D92DEB5717658 /* com.apple.keylayout.Polish.png */,
+				999B12349102129EC242E58E /* com.apple.keylayout.PolishPro.png */,
+				89977228881DD14343753CB9 /* com.apple.keylayout.Portuguese.png */,
+				C7C6FDF4EFF2268462CFFBC8 /* com.apple.keylayout.Romanian-Standard.png */,
+				8E5138E27BA94E4AAD2119CE /* com.apple.keylayout.Romanian.png */,
+				3EDE4D03E323FE431A91E7F1 /* com.apple.keylayout.Russian-Phonetic.png */,
+				8052A2AE35B6A5FA0DFCE3EF /* com.apple.keylayout.Russian.png */,
+				C0E15CB262CE431D117CC0A5 /* com.apple.keylayout.RussianWin.png */,
+				20C2E0B4BC583CCAEB23279F /* com.apple.keylayout.Sami-PC.png */,
+				3E0187956AE69E3A05004289 /* com.apple.keylayout.Serbian-Latin.png */,
+				0387878B2D0ACDFDEE43A1A4 /* com.apple.keylayout.Serbian.png */,
+				F35BDC2A61037CE9B020F7F0 /* com.apple.keylayout.Slovak-QWERTY.png */,
+				D3ADC1AC8D792C87FD523CF7 /* com.apple.keylayout.Slovak.png */,
+				521BB991BDC7D1621F894294 /* com.apple.keylayout.Slovenian.png */,
+				9C37F488C5DA82CC69EFC549 /* com.apple.keylayout.Spanish-ISO.png */,
+				7B350DE2BF058497FD9A0E0F /* com.apple.keylayout.Spanish.png */,
+				E7E4DECD8B18B6A64B261A20 /* com.apple.keylayout.Swedish-Pro.png */,
+				5FB85A7083E702364A02E5CF /* com.apple.keylayout.Swedish.png */,
+				3826ACF84ACBDE815B522471 /* com.apple.keylayout.SwedishSami-PC.png */,
+				BCE95622223BE9251434B423 /* com.apple.keylayout.SwissFrench.png */,
+				8B2FE337179C0D6636C0A8AF /* com.apple.keylayout.SwissGerman.png */,
+				6F3C49C1D727CEEF8BF10EE9 /* com.apple.keylayout.Tongan.png */,
+				652774B3EE3F072A5743DBB8 /* com.apple.keylayout.Turkish-QWERTY-PC.png */,
+				95F6151F1F7FBFCC233E01F9 /* com.apple.keylayout.Turkish-QWERTY.png */,
+				9299D0B30EBA2ED7150A1496 /* com.apple.keylayout.Turkish-Standard.png */,
+				DD1005CFF6C7D69B8CDD653C /* com.apple.keylayout.Turkish.png */,
+				AFC332715343F9AE11831AA0 /* com.apple.keylayout.Ukrainian-PC.png */,
+				7F5FFBEA71E34F5DD2847FFE /* com.apple.keylayout.Ukrainian.png */,
+				8B6BDEE5A980DFAB98EC019B /* com.apple.keylayout.US.png */,
+				AE9072DEF30708E59FCA3030 /* com.apple.keylayout.USInternational-PC.png */,
+				B365EC3DC0E11497E907EAAC /* com.apple.keylayout.Vietnamese.png */,
+				B437CBA3726082A9C123BD87 /* com.apple.keylayout.Welsh.png */,
+			);
+			path = Flags;
+			sourceTree = "<group>";
+		};
+		931308B8541CA011075F6EFE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A0A678EBE557A0530BEA898C /* CursorIndicatorManager.swift */,
+				12AA6CA94C2C996F09B62B83 /* CursorIndicatorWindow.swift */,
+				3A5B10A1CA23D4EBB2B7F0B1 /* MenuManager.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9E6C596CCA6DC88A1D11764F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C27A3B8BEDF7CA220D935B9 /* FlagType.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0CED220F9492029E380D170 /* FlagType */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32B86F7472EA2F3F0F79A362 /* Build configuration list for PBXNativeTarget "FlagType" */;
+			buildPhases = (
+				6D931FFB92AD88D0CDA4CAD1 /* Sources */,
+				DEDE4B39F98254B2FEC487BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlagType;
+			packageProductDependencies = (
+			);
+			productName = FlagType;
+			productReference = 3C27A3B8BEDF7CA220D935B9 /* FlagType.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E9F7C621360ADCC715444D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C0CED220F9492029E380D170 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = C249803CF788AE8EAF2E5416 /* Build configuration list for PBXProject "FlagType" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5093D92A714C83F8EF9A8030;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9E6C596CCA6DC88A1D11764F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0CED220F9492029E380D170 /* FlagType */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEDE4B39F98254B2FEC487BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A54864C708910E50AB90888 /* AppIcon.icns in Resources */,
+				FF1B1DBAB9AA2DE9C5854196 /* Assets.xcassets in Resources */,
+				E53A719F1CEE28BE7DB8EB56 /* com.apple.keylayout.Australian.png in Resources */,
+				0FC666238E1C77CF4F4515F3 /* com.apple.keylayout.Austrian.png in Resources */,
+				59730A5B2A1811B9603E9CF3 /* com.apple.keylayout.Azeri.png in Resources */,
+				19767146CD84A6EBAFF4569A /* com.apple.keylayout.Belgian.png in Resources */,
+				1BEF88C5A945CE12CCECEBDB /* com.apple.keylayout.Brazilian-ABNT2.png in Resources */,
+				4B6709826AC1D476F9A780D9 /* com.apple.keylayout.Brazilian-Pro.png in Resources */,
+				8063F29D1E9BF3DD1EA1C7D3 /* com.apple.keylayout.Brazilian.png in Resources */,
+				CE4FFF0833159790CE1797A8 /* com.apple.keylayout.British-PC.png in Resources */,
+				FF823BC558F0E48319E263B2 /* com.apple.keylayout.British.png in Resources */,
+				56CE352D1B05615C79E2DC3B /* com.apple.keylayout.Bulgarian-Phonetic.png in Resources */,
+				ACE66A28EDADD1AAB23098AE /* com.apple.keylayout.Bulgarian.png in Resources */,
+				68DFCC1D75484C56BB4C33A6 /* com.apple.keylayout.Byelorussian.png in Resources */,
+				2C4C8E430661E394FE10A753 /* com.apple.keylayout.Canadian-CSA.png in Resources */,
+				03055915FBBD9FFC38EB795C /* com.apple.keylayout.Canadian.png in Resources */,
+				16E8E1511AEA1F662BA249BB /* com.apple.keylayout.Croatian-PC.png in Resources */,
+				9F7D3ED40321A7341A5AC942 /* com.apple.keylayout.Croatian.png in Resources */,
+				DC44A7FA9CD718F057D907B4 /* com.apple.keylayout.Czech-QWERTY.png in Resources */,
+				DA74374E03DAEAE962A18865 /* com.apple.keylayout.Czech.png in Resources */,
+				06FE835B36D5147513173679 /* com.apple.keylayout.Danish.png in Resources */,
+				88FE52599D5E8E14B8A4C66A /* com.apple.keylayout.Dutch.png in Resources */,
+				148539AA7FAF2ABC417EAB75 /* com.apple.keylayout.Estonian.png in Resources */,
+				8B1D449FDCB158CB1DD96408 /* com.apple.keylayout.Faroese.png in Resources */,
+				B51BA28A8F41A767BBFC333D /* com.apple.keylayout.Finnish.png in Resources */,
+				CB7B03A5DDC2D6F125BDB847 /* com.apple.keylayout.FinnishExtended.png in Resources */,
+				39DB9D79EE7DEE128F5DCB46 /* com.apple.keylayout.FinnishSami-PC.png in Resources */,
+				F5ADE0E91C23C0E5D27362FA /* com.apple.keylayout.French-PC.png in Resources */,
+				3BA0AD6920865A55850211DF /* com.apple.keylayout.French-numerical.png in Resources */,
+				442F0F52BFA95D1593AFA6D0 /* com.apple.keylayout.French.png in Resources */,
+				F5C17B20F5330AA085971628 /* com.apple.keylayout.German-DIN-2137.png in Resources */,
+				6C93EA35CD2D264631790ED2 /* com.apple.keylayout.German.png in Resources */,
+				9B45F3091FDBD8D297CE8055 /* com.apple.keylayout.Hawaiian.png in Resources */,
+				694A5606B110F4803B1C200C /* com.apple.keylayout.Hungarian-QWERTY.png in Resources */,
+				B2CC979DE8CC63C92D20F12B /* com.apple.keylayout.Hungarian.png in Resources */,
+				DBBB8B3A6D9CA760CDD4CF92 /* com.apple.keylayout.Icelandic.png in Resources */,
+				F7E025951006388F301CC2A5 /* com.apple.keylayout.Irish.png in Resources */,
+				D8E060F695814E2664CD0886 /* com.apple.keylayout.IrishExtended.png in Resources */,
+				37B27857742ABC3FCE37E701 /* com.apple.keylayout.Italian-Pro.png in Resources */,
+				7D7AFF124C19235352CCB3D8 /* com.apple.keylayout.Italian.png in Resources */,
+				A412548F3B43AA566414887A /* com.apple.keylayout.Kazakh.png in Resources */,
+				D5561AE2DCA0AEDCEE88FA95 /* com.apple.keylayout.Latvian.png in Resources */,
+				96EDC8D5C8930DA939FB0416 /* com.apple.keylayout.Lithuanian.png in Resources */,
+				FA29E668A3EFF79CF5CC65D5 /* com.apple.keylayout.Macedonian.png in Resources */,
+				BADE055AFEFA1CAA0DDECB57 /* com.apple.keylayout.Maltese.png in Resources */,
+				33BEE040A12834BC55D824E5 /* com.apple.keylayout.Maori.png in Resources */,
+				DEBE775322B9D6395F5C9A7F /* com.apple.keylayout.NorthernSami.png in Resources */,
+				D5A61626E198F483F5C7069A /* com.apple.keylayout.Norwegian.png in Resources */,
+				26537FD78B5E4B406299753C /* com.apple.keylayout.NorwegianExtended.png in Resources */,
+				0F9CBC0DA4EB1DFBAC3AE96C /* com.apple.keylayout.NorwegianSami-PC.png in Resources */,
+				B74C24F50A52DD8BA5309D4B /* com.apple.keylayout.Polish.png in Resources */,
+				4BC058C2D1623496C32AA3A2 /* com.apple.keylayout.PolishPro.png in Resources */,
+				FC81E68267D657CADC72D599 /* com.apple.keylayout.Portuguese.png in Resources */,
+				B5833623DA4C8ADDB9B9E524 /* com.apple.keylayout.Romanian-Standard.png in Resources */,
+				355B2BAC0C6AD9408AF7154E /* com.apple.keylayout.Romanian.png in Resources */,
+				483A7E8FB29FF469E182F621 /* com.apple.keylayout.Russian-Phonetic.png in Resources */,
+				BF8CE7B61357C3C05656A8D2 /* com.apple.keylayout.Russian.png in Resources */,
+				64566C1E886EE375842C5E90 /* com.apple.keylayout.RussianWin.png in Resources */,
+				22F8BAB3B49BEC33210917A5 /* com.apple.keylayout.Sami-PC.png in Resources */,
+				7D8056F2C5AAB66378C7538F /* com.apple.keylayout.Serbian-Latin.png in Resources */,
+				95EB425775BA7F8D17D6BD1F /* com.apple.keylayout.Serbian.png in Resources */,
+				656303EC4948BE84E53DF4BA /* com.apple.keylayout.Slovak-QWERTY.png in Resources */,
+				B06BE5EFF342D902237217D9 /* com.apple.keylayout.Slovak.png in Resources */,
+				76E30EF6E2E51EA9D364D33A /* com.apple.keylayout.Slovenian.png in Resources */,
+				253774D479AF78E379094B21 /* com.apple.keylayout.Spanish-ISO.png in Resources */,
+				449DE414D597F9B654F1B290 /* com.apple.keylayout.Spanish.png in Resources */,
+				622D700D94F9A34E45091608 /* com.apple.keylayout.Swedish-Pro.png in Resources */,
+				84EFB4F7958A68AB4C292DB3 /* com.apple.keylayout.Swedish.png in Resources */,
+				C1EAA7B44121C01D55968605 /* com.apple.keylayout.SwedishSami-PC.png in Resources */,
+				101EA45908EEA647EA99ADD4 /* com.apple.keylayout.SwissFrench.png in Resources */,
+				05FF40185C052E9DB6110E8B /* com.apple.keylayout.SwissGerman.png in Resources */,
+				75E9F629B041F9F9FFB0B6CE /* com.apple.keylayout.Tongan.png in Resources */,
+				262F1BAEFE433E10FFC7859E /* com.apple.keylayout.Turkish-QWERTY-PC.png in Resources */,
+				9ED9333261324AF2E668E601 /* com.apple.keylayout.Turkish-QWERTY.png in Resources */,
+				63C66B74340BCDEEEB129662 /* com.apple.keylayout.Turkish-Standard.png in Resources */,
+				E277F647C5BBC77168109B1D /* com.apple.keylayout.Turkish.png in Resources */,
+				2299D2FE20762ACB1D55703D /* com.apple.keylayout.US.png in Resources */,
+				1E3D96DAA53100EC36914240 /* com.apple.keylayout.USInternational-PC.png in Resources */,
+				AC9FF2A7C717EFE58F39582C /* com.apple.keylayout.Ukrainian-PC.png in Resources */,
+				1101B2EA17127F185B34EE36 /* com.apple.keylayout.Ukrainian.png in Resources */,
+				F6FB1586DC3604661636C2D8 /* com.apple.keylayout.Vietnamese.png in Resources */,
+				4160A8FF6F20D0A0D82FD31C /* com.apple.keylayout.Welsh.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D931FFB92AD88D0CDA4CAD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C4521334077E3FBC068505 /* AppDelegate.swift in Sources */,
+				AD311DC25F2114AA36C93F37 /* CursorIndicatorManager.swift in Sources */,
+				070952091BBB772A72ACE313 /* CursorIndicatorWindow.swift in Sources */,
+				47A3E909BC85417170922130 /* FlagProvider.swift in Sources */,
+				E7B1C5CE1F220D3733FF579E /* InputSourceManager.swift in Sources */,
+				EFD808BC3466B70A4D2C10D8 /* MenuManager.swift in Sources */,
+				3F17C2122230FA5F7263BC57 /* Settings.swift in Sources */,
+				ECC30061B9F8054F91CAC2CA /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1FE0928077FE4429703B89A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = FlagType/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagtype.FlagType;
+				PRODUCT_NAME = FlagType;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2411C44766B588F2D3B0EA9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5338295ECF578E232719C045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = FlagType/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagtype.FlagType;
+				PRODUCT_NAME = FlagType;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F36412CCC455AD8761F44676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32B86F7472EA2F3F0F79A362 /* Build configuration list for PBXNativeTarget "FlagType" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE0928077FE4429703B89A1 /* Debug */,
+				5338295ECF578E232719C045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C249803CF788AE8EAF2E5416 /* Build configuration list for PBXProject "FlagType" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F36412CCC455AD8761F44676 /* Debug */,
+				2411C44766B588F2D3B0EA9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42E9F7C621360ADCC715444D /* Project object */;
+}
