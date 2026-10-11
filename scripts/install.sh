@@ -10,7 +10,7 @@ NOCOLOR='\033[0m'
 
 APP_NAME="FlagType"
 APP_DESTINATION="/Applications/${APP_NAME}.app"
-GITHUB_REPO="${FLAGTYPE_REPO:-freefelt/FlagType}"
+GITHUB_REPO="${FLAGTYPE_REPO:-tematef/FlagType}"
 
 printf "${CYAN}============================ Installing ${APP_NAME} =============================\n${NOCOLOR}"
 

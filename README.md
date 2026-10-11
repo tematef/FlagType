@@ -27,14 +27,14 @@
 Run the following command in Terminal to download and install the latest release directly into `/Applications`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freefelt/FlagType/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tematef/FlagType/main/scripts/install.sh | bash
 ```
 
 ---
 
 ### Option 2: Download from GitHub Releases
 
-1. Download `FlagType.zip` from the latest [GitHub Releases](https://github.com/freefelt/FlagType/releases).
+1. Download `FlagType.zip` from the latest [GitHub Releases](https://github.com/tematef/FlagType/releases).
 2. Unzip `FlagType.zip` and move `FlagType.app` to your `/Applications` folder.
 3. Open Terminal and remove the macOS quarantine attribute (since the app is ad-hoc signed without a paid Apple Developer certificate):
    ```bash
@@ -55,7 +55,7 @@ FlagType builds directly using standard macOS Command Line Tools without requiri
 
 ```bash
 # Clone the repository
-git clone https://github.com/freefelt/FlagType.git
+git clone https://github.com/tematef/FlagType.git
 cd FlagType
 
 # Run automated tests
