@@ -87,22 +87,13 @@ final class MenuManager: NSObject {
         
         // Settings Section
         let cursorItem = NSMenuItem(
-            title: "Show Flag at Cursor",
+            title: "Show Flag at Cursor on Layout Change",
             action: #selector(toggleShowCursorIndicator),
             keyEquivalent: ""
         )
         cursorItem.target = self
         cursorItem.state = Settings.shared.showCursorIndicator ? .on : .off
         menu.addItem(cursorItem)
-        
-        let typingItem = NSMenuItem(
-            title: "Hide While Typing",
-            action: #selector(toggleHideWhileTyping),
-            keyEquivalent: ""
-        )
-        typingItem.target = self
-        typingItem.state = Settings.shared.hideWhileTyping ? .on : .off
-        menu.addItem(typingItem)
         
         let nameItem = NSMenuItem(
             title: "Show Layout Name in Menu Bar",
@@ -169,7 +160,7 @@ final class MenuManager: NSObject {
     @objc private func showAbout() {
         let alert = NSAlert()
         alert.messageText = "FlagType v0.1.0"
-        alert.informativeText = "A lightweight macOS menu bar utility that displays your active keyboard layout flag at the cursor.\n\nCreated with AppKit."
+        alert.informativeText = "A lightweight macOS menu bar utility that displays your active keyboard layout flag in the menu bar and at the cursor on layout change.\n\nCreated with AppKit."
         alert.alertStyle = .informational
         alert.addButton(withTitle: "OK")
         alert.runModal()

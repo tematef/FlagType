@@ -1,22 +1,29 @@
 # FlagType
 
-**FlagType** is a fast, lightweight, and open-source macOS utility that displays your active keyboard layout flag right next to the cursor when hovering over text fields and in the menu bar. Never type in the wrong language again.
+**FlagType** is a fast, lightweight, and open-source macOS utility that displays your active keyboard layout flag in the menu bar and right next to your cursor whenever you switch layouts. Never type in the wrong language again.
 
 ![macOS 13+](https://img.shields.io/badge/macOS-13.0%2B-blue)
 ![Apple Silicon](https://img.shields.io/badge/arch-arm64-orange)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 
+<p align="center">
+  <img src="docs/images/cursor_demo.png" alt="FlagType Cursor Indicator Demo" width="700">
+</p>
+<p align="center">
+  <img src="docs/images/menubar_demo.png" alt="FlagType Menu Bar Demo" width="700">
+</p>
+
 ---
 
 ## Features
 
-- 🏳️ **Cursor Flag Indicator**: Displays the active keyboard layout flag next to the text pointer (I-beam) when editing or hovering over input fields.
-- 📌 **Menu Bar Indicator**: Shows the active keyboard layout in the macOS menu bar.
-- ⚡ **Instant Switching**: Switch between enabled keyboard layouts with a single click.
-- ⌨️ **Smart Typing Detection**: Automatically hides the cursor indicator while actively typing to avoid distraction.
-- 🚀 **Launch at Login**: Optional setting to automatically launch FlagType when logging in.
-- 🪶 **Native & Lightweight**: Built 100% in pure Swift using AppKit and Carbon. Zero external dependencies, zero analytics, negligible CPU and battery footprint.
+- **Layout Switch Flag HUD**: Briefly displays the active keyboard layout flag at your mouse cursor whenever you switch input sources (via shortcut, Caps Lock, or menu).
+- **Menu Bar Indicator**: Shows the active keyboard layout flag persistently in the macOS menu bar.
+- **Instant Switching**: Switch between enabled keyboard layouts with a single click from the menu bar.
+- **Non-Intrusive**: Dismisses immediately upon keystroke or auto-fades after a brief moment, never blocking your text entry.
+- **Launch at Login**: Optional setting to automatically launch FlagType when logging in.
+- **Native & Lightweight**: Built 100% in pure Swift using AppKit and Carbon. Zero external dependencies, zero analytics, negligible CPU and battery footprint.
 
 ---
 
@@ -84,9 +91,10 @@ FlagType includes a fast, native Swift test runner covering unit tests and headl
 ```
 
 The test suite verifies:
-- Cursor geometry math and Retina/vertical I-beam detection
+- Layout change indicator HUD display, positioning, and auto-dismiss timer
+- Instant dismissal upon user keystroke / typing
+- Setting toggle suppression and persistence
 - Flag image resolution, language code normalization, and fallback text badge generation
-- Settings persistence and toggles
 - Headless AppKit window hierarchy and positioning offsets
 - Menu bar status item initialization
 
@@ -99,7 +107,7 @@ FlagType is designed to be fully compliant with corporate IT and enterprise secu
 - **MIT License**: Free for personal, commercial, and enterprise use on company laptops.
 - **100% Offline**: No network requests, telemetries, or remote analytics of any kind.
 - **Built from Clean Source**: No bundled third-party binary blobs or precompiled libraries.
-- **Accessibility Permissions**: macOS requires Accessibility access exclusively to query the system cursor position (`NSCursor.currentSystem`) and determine when the pointer hovers over text fields. FlagType does not log, inspect, or transmit user keystrokes.
+- **Accessibility Permissions**: macOS requires Accessibility access exclusively to detect key strokes for immediately dismissing the temporary flag HUD during typing. FlagType does not log, inspect, or transmit user keystrokes.
 
 ---
 
@@ -108,7 +116,7 @@ FlagType is designed to be fully compliant with corporate IT and enterprise secu
 On first launch:
 1. Open **System Settings** → **Privacy & Security** → **Accessibility**.
 2. Toggle the switch for **FlagType**.
-3. (Optional) If you want FlagType to start on boot, click the FlagType menu bar icon and select **Preferences** → **Launch at Login**.
+3. (Optional) If you want FlagType to start on boot, click the FlagType menu bar icon and check **Launch at Login**.
 
 ---
 

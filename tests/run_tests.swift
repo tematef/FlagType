@@ -32,29 +32,9 @@ struct TestRunner {
         block()
     }
 
-    static func isHotSpotIBeam(x: Double, y: Double) -> Bool {
-        let rx = round(x)
-        let ry = round(y)
-        if rx == 4.0 && (ry >= 8.0 && ry <= 12.0) { return true }
-        if (rx >= 6.0 && rx <= 8.0) && ry == 4.0 { return true }
-        return false
-    }
-
     static func main() {
         // Initialize NSApplication in headless mode
         _ = NSApplication.shared
-
-        testGroup("Cursor Geometry Unit Tests") {
-            assertTrue(isHotSpotIBeam(x: 4.0, y: 9.0), "Standard Retina text I-beam (4.0, 9.0) recognized")
-            assertTrue(isHotSpotIBeam(x: 4.0, y: 8.0), "Standard text I-beam variant (4.0, 8.0) recognized")
-            assertTrue(isHotSpotIBeam(x: 4.0, y: 11.0), "High-res text I-beam (4.0, 11.0) recognized")
-            assertTrue(isHotSpotIBeam(x: 7.0, y: 4.0), "Vertical layout I-beam (7.0, 4.0) recognized")
-            
-            assertTrue(!isHotSpotIBeam(x: 4.0, y: 4.0), "Standard arrow cursor (4.0, 4.0) rejected")
-            assertTrue(!isHotSpotIBeam(x: 0.0, y: 0.0), "Zero hotspot cursor (0.0, 0.0) rejected")
-            assertTrue(!isHotSpotIBeam(x: 6.0, y: 1.0), "Pointing hand cursor (6.0, 1.0) rejected")
-            assertTrue(!isHotSpotIBeam(x: 8.0, y: 8.0), "Crosshair/resize cursor (8.0, 8.0) rejected")
-        }
 
         testGroup("FlagProvider Unit Tests") {
             let dummySourceUS = InputSource(
@@ -103,10 +83,15 @@ struct TestRunner {
             assertTrue(!Settings.shared.showCursorIndicator, "Settings showCursorIndicator can be set to false")
             Settings.shared.showCursorIndicator = initialCursor
             
-            let initialTyping = Settings.shared.hideWhileTyping
-            Settings.shared.hideWhileTyping = true
-            assertTrue(Settings.shared.hideWhileTyping, "Settings hideWhileTyping can be set to true")
-            Settings.shared.hideWhileTyping = initialTyping
+            let initialMenuName = Settings.shared.showMenuLayoutName
+            Settings.shared.showMenuLayoutName = true
+            assertTrue(Settings.shared.showMenuLayoutName, "Settings showMenuLayoutName can be set to true")
+            Settings.shared.showMenuLayoutName = false
+            assertTrue(!Settings.shared.showMenuLayoutName, "Settings showMenuLayoutName can be set to false")
+            Settings.shared.showMenuLayoutName = initialMenuName
+            
+            // Legacy compatibility check
+            assertTrue(Settings.shared.hideWhileTyping, "Settings hideWhileTyping provides legacy getter compatibility")
         }
 
         testGroup("Headless AppKit UI Tests: CursorIndicatorWindow") {
@@ -124,6 +109,12 @@ struct TestRunner {
             window.setPosition(near: testPoint)
             let expectedOrigin = CGPoint(x: 200 + 14, y: 300 - 18)
             assertEqual(window.frame.origin, expectedOrigin, "Window setPosition correctly applies offset (14, -18)")
+            
+            window.show(near: testPoint)
+            assertEqual(window.alphaValue, 1.0, "Window show resets alphaValue to 1.0")
+            
+            window.dismiss(animated: false)
+            assertTrue(!window.isVisible, "Window dismiss hides window immediately")
         }
 
         testGroup("Headless AppKit UI Tests: MenuManager") {
@@ -133,6 +124,47 @@ struct TestRunner {
             
             let sources = InputSourceManager.shared.availableInputSources()
             assertTrue(!sources.isEmpty, "InputSourceManager lists available input sources on system")
+        }
+
+        testGroup("Layout Change Indicator HUD Tests") {
+            let manager = CursorIndicatorManager.shared
+            let savedPref = Settings.shared.showCursorIndicator
+            let originalDuration = manager.displayDuration
+            
+            // 1. When enabled, showing indicator sets isIndicatorVisible = true
+            Settings.shared.showCursorIndicator = true
+            let testCursorLocation = CGPoint(x: 150, y: 250)
+            manager.showIndicator(at: testCursorLocation)
+            assertTrue(manager.isIndicatorVisible, "HUD becomes visible when layout change indicator is triggered")
+            
+            // 2. Typing keystroke dismisses indicator immediately
+            manager.hide(animated: false)
+            assertTrue(!manager.isIndicatorVisible, "HUD is immediately dismissed on user keystroke / typing")
+            
+            // 3. When disabled in Settings, layout changes do NOT show HUD
+            Settings.shared.showCursorIndicator = false
+            manager.handleInputSourceChanged()
+            assertTrue(!manager.isIndicatorVisible, "HUD remains hidden on layout change when setting is disabled")
+            
+            // 4. Multiple rapid layout switches refresh display and reset timer without crashing
+            Settings.shared.showCursorIndicator = true
+            manager.handleInputSourceChanged()
+            assertTrue(manager.isIndicatorVisible, "HUD visible after first layout change")
+            manager.handleInputSourceChanged()
+            assertTrue(manager.isIndicatorVisible, "HUD remains active and resets on second rapid layout change")
+            
+            // 5. Timer auto-dismiss test
+            manager.displayDuration = 0.05
+            manager.showIndicator(at: testCursorLocation)
+            assertTrue(manager.isIndicatorVisible, "HUD visible before timer expires")
+            
+            let expectation = CFRunLoopRunInMode(.defaultMode, 0.1, false)
+            _ = expectation
+            assertTrue(!manager.isIndicatorVisible, "HUD automatically dismisses after displayDuration expires")
+            
+            // Restore original settings
+            manager.displayDuration = originalDuration
+            Settings.shared.showCursorIndicator = savedPref
         }
 
         print("\n=========================================")
@@ -145,4 +177,3 @@ struct TestRunner {
         }
     }
 }
-

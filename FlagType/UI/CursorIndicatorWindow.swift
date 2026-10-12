@@ -73,4 +73,27 @@ final class CursorIndicatorWindow: NSWindow {
         )
         setFrameOrigin(origin)
     }
+    
+    func show(near point: CGPoint) {
+        setPosition(near: point)
+        alphaValue = 1.0
+        orderFrontRegardless()
+    }
+    
+    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+        if animated {
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.15
+                self.animator().alphaValue = 0.0
+            }, completionHandler: {
+                self.orderOut(nil)
+                self.alphaValue = 1.0
+                completion?()
+            })
+        } else {
+            orderOut(nil)
+            completion?()
+        }
+    }
 }
+

@@ -5,9 +5,14 @@
 - **Standalone swiftc compilation**: The app builds via `swiftc` without requiring the full 12GB+ `Xcode.app`. Command Line Tools are sufficient. Run `./scripts/build.sh`.
 
 ## macOS System Integration Quirks
-- **Cursor Detection**: `NSCursor.currentSystem` returns a new proxy object on every call in AppKit. Do NOT use pointer or value equality (`== NSCursor.iBeam`), as it always evaluates to `false`. Instead, inspect `cur.hotSpot` geometry:
-  - Horizontal text I-beam: `round(x) == 4.0` and `round(y) >= 8.0 && round(y) <= 12.0` (typically `(4.0, 9.0)`).
-  - Vertical text I-beam: `round(x) >= 6.0 && round(x) <= 8.0` and `round(y) == 4.0` (typically `(7.0, 4.0)`).
+- **Cursor Detection & Web Browser Limitations**:
+  - `NSCursor.currentSystem` returns a new proxy object on every call in AppKit. Do NOT use pointer or value equality (`== NSCursor.iBeam`).
+  - Browsers (Safari, Chrome, Firefox) and PDF viewers set `currentSystem` to an I-beam over all selectable static text, not just editable inputs.
+  - Accessibility hit-testing (`AXUIElementCopyElementAtPosition`) inside web renderers is fragile across sandboxes and DOM wrapper roles (`AXGroup`, `AXWebArea`, `AXStaticText`).
+  - **Architecture Decision**: Avoid continuous hover polling or accessibility hit-testing. Rely on event-driven notifications (`kTISNotifySelectedKeyboardInputSourceChanged`) to briefly display the indicator HUD upon layout switch, and auto-dismiss.
+- **Ephemeral Event Monitors for HUD Dismissal**:
+  - Rather than running 24/7 global event taps or continuous polling loops, attach `NSEvent.addGlobalMonitorForEvents(matching: [.keyDown])` dynamically only while the temporary HUD window is on screen.
+  - Tear down monitors immediately upon keystroke dismissal or auto-dismiss timer expiration to eliminate idle overhead and trackpad jitter issues.
 - **Background Agent Overlay (`LSUIElement = true`)**:
   - `window.orderFront(nil)` will NOT bring the window above active applications when called from an inactive agent app. Always use `window.orderFrontRegardless()`.
   - Window level must be elevated to `.popUpMenu` (level 101) or higher to avoid being obscured.

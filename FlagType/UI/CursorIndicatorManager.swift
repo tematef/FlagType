@@ -3,15 +3,14 @@ import AppKit
 final class CursorIndicatorManager {
     static let shared = CursorIndicatorManager()
     
-    private let window = CursorIndicatorWindow()
-    private var globalMouseMonitor: Any?
-    private var localMouseMonitor: Any?
-    private var keyMonitor: Any?
-    private var checkTimer: Timer?
+    // Duration in seconds to display the indicator after a layout change
+    var displayDuration: TimeInterval = 1.2
     
+    private let window = CursorIndicatorWindow()
+    private var dismissTimer: Timer?
+    private var globalKeyMonitor: Any?
+    private var localKeyMonitor: Any?
     private var isVisible = false
-    private var isTyping = false
-    private var typingResetTimer: Timer?
     
     private init() {
         setupInputSourceObserver()
@@ -19,15 +18,10 @@ final class CursorIndicatorManager {
     
     func start() {
         updateImage()
-        setupMonitors()
-        setupTimer()
     }
     
     func stop() {
-        removeMonitors()
-        checkTimer?.invalidate()
-        checkTimer = nil
-        hide()
+        hide(animated: false)
     }
     
     func updateImage() {
@@ -42,130 +36,85 @@ final class CursorIndicatorManager {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.updateImage()
-            if self?.isVisible == true {
-                self?.showAtCurrentCursor()
+            self?.handleInputSourceChanged()
+        }
+        
+        NotificationCenter.default.addObserver(
+            forName: Settings.settingsChangedNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            if !Settings.shared.showCursorIndicator {
+                self?.hide(animated: false)
             }
         }
     }
     
-    private func setupMonitors() {
-        // Global mouse move monitor
-        globalMouseMonitor = NSEvent.addGlobalMonitorForEvents(
-            matching: [.mouseMoved, .leftMouseDragged, .rightMouseDragged]
-        ) { [weak self] _ in
-            self?.handleMouseMoved()
-        }
+    func handleInputSourceChanged() {
+        guard Settings.shared.showCursorIndicator else { return }
         
-        // Local mouse move monitor
-        localMouseMonitor = NSEvent.addLocalMonitorForEvents(
-            matching: [.mouseMoved, .leftMouseDragged, .rightMouseDragged]
-        ) { [weak self] event in
-            self?.handleMouseMoved()
-            return event
-        }
+        updateImage()
+        showIndicator(at: NSEvent.mouseLocation)
+    }
+    
+    func showIndicator(at point: CGPoint) {
+        // Invalidate any active dismissal timer
+        dismissTimer?.invalidate()
+        dismissTimer = nil
         
-        // Global key press monitor to hide while typing
-        keyMonitor = NSEvent.addGlobalMonitorForEvents(
-            matching: [.keyDown]
-        ) { [weak self] _ in
-            self?.handleKeyDown()
+        window.show(near: point)
+        isVisible = true
+        
+        // Listen for key strokes to immediately dismiss the HUD if typing begins
+        setupKeyMonitorsIfNeeded()
+        
+        // Auto-dismiss after displayDuration
+        dismissTimer = Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: false) { [weak self] _ in
+            self?.hide(animated: true)
         }
     }
     
-    private func removeMonitors() {
-        if let monitor = globalMouseMonitor {
-            NSEvent.removeMonitor(monitor)
-            globalMouseMonitor = nil
-        }
-        if let monitor = localMouseMonitor {
-            NSEvent.removeMonitor(monitor)
-            localMouseMonitor = nil
-        }
-        if let monitor = keyMonitor {
-            NSEvent.removeMonitor(monitor)
-            keyMonitor = nil
-        }
-    }
-    
-    private func setupTimer() {
-        // Check cursor state every 0.05s for responsiveness
-        checkTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
-            self?.checkCursorState()
-        }
-    }
-    
-    private func handleMouseMoved() {
-        isTyping = false
-        typingResetTimer?.invalidate()
-        checkCursorState()
-    }
-    
-    private func handleKeyDown() {
-        guard Settings.shared.hideWhileTyping else { return }
-        isTyping = true
-        hide()
+    func hide(animated: Bool = true) {
+        dismissTimer?.invalidate()
+        dismissTimer = nil
+        removeKeyMonitors()
         
-        typingResetTimer?.invalidate()
-        // Reset typing state after 0.8s of inactivity
-        typingResetTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [weak self] _ in
-            self?.isTyping = false
-            self?.checkCursorState()
-        }
+        guard isVisible else { return }
+        isVisible = false
+        
+        window.dismiss(animated: animated)
     }
     
-    private func isIBeamCursor() -> Bool {
-        guard let cur = NSCursor.currentSystem else { return false }
-        let hs = cur.hotSpot
-        let x = round(hs.x)
-        let y = round(hs.y)
-        
-        // Standard horizontal I-beam: centered vertically on line of text
-        // HotSpot on macOS is (4, 9) on standard/retina displays, or (4, 8)-(4, 12)
-        if x == 4.0 && (y >= 8.0 && y <= 12.0) {
-            return true
+    private func setupKeyMonitorsIfNeeded() {
+        if globalKeyMonitor == nil {
+            globalKeyMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { [weak self] _ in
+                self?.hide(animated: false)
+            }
         }
-        // Vertical layout I-beam: (7, 4) or (6-8, 4)
-        if (x >= 6.0 && x <= 8.0) && y == 4.0 {
-            return true
-        }
-        return false
-    }
-    
-    private func checkCursorState() {
-        guard Settings.shared.showCursorIndicator else {
-            if isVisible { hide() }
-            return
-        }
-        
-        if isTyping && Settings.shared.hideWhileTyping {
-            if isVisible { hide() }
-            return
-        }
-        
-        if isIBeamCursor() {
-            showAtCurrentCursor()
-        } else {
-            if isVisible {
-                hide()
+        if localKeyMonitor == nil {
+            localKeyMonitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown]) { [weak self] event in
+                self?.hide(animated: false)
+                return event
             }
         }
     }
     
-    private func showAtCurrentCursor() {
-        let mouseLocation = NSEvent.mouseLocation
-        window.setPosition(near: mouseLocation)
-        
-        if !isVisible {
-            window.orderFrontRegardless()
-            isVisible = true
+    private func removeKeyMonitors() {
+        if let monitor = globalKeyMonitor {
+            NSEvent.removeMonitor(monitor)
+            globalKeyMonitor = nil
+        }
+        if let monitor = localKeyMonitor {
+            NSEvent.removeMonitor(monitor)
+            localKeyMonitor = nil
         }
     }
     
-    private func hide() {
-        if isVisible {
-            window.orderOut(nil)
-            isVisible = false
-        }
+    func refreshMonitorsIfNeeded() {
+        // Keep for AppDelegate compatibility
+    }
+    
+    var isIndicatorVisible: Bool {
+        return isVisible
     }
 }

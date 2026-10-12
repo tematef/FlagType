@@ -14,11 +14,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         CursorIndicatorManager.shared.stop()
     }
     
+    private var accessibilityCheckTimer: Timer?
+    
     private func checkAccessibilityPermissions() {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary
         let isTrusted = AXIsProcessTrustedWithOptions(options)
         if !isTrusted {
             print("[FlagType] Accessibility permissions not yet granted. Prompt displayed.")
+            // Periodically check until granted so event taps attach without restarting app
+            accessibilityCheckTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] timer in
+                if AXIsProcessTrusted() {
+                    print("[FlagType] Accessibility permissions granted.")
+                    timer.invalidate()
+                    self?.accessibilityCheckTimer = nil
+                    CursorIndicatorManager.shared.refreshMonitorsIfNeeded()
+                }
+            }
         }
     }
 }
