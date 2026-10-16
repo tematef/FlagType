@@ -3,14 +3,18 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-APP_DIR="build/FlagType.app"
+BUILD_DIR="build.noindex"
+APP_DIR="$BUILD_DIR/FlagType.app"
 CONTENTS_DIR="$APP_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"
 RESOURCES_DIR="$CONTENTS_DIR/Resources"
 
 echo "==> Cleaning previous build..."
-rm -rf build
+rm -rf "$BUILD_DIR" build
 mkdir -p "$MACOS_DIR" "$RESOURCES_DIR"
+touch "$BUILD_DIR/.metadata_never_index"
+ln -sf "$BUILD_DIR" build
+
 
 echo "==> Compiling Swift sources..."
 swiftc \

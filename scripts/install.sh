@@ -21,7 +21,9 @@ pkill -x "$APP_NAME" 2>/dev/null || true
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
 LOCAL_APP=""
 
-if [ -n "$SCRIPT_DIR" ] && [ -d "$SCRIPT_DIR/../build/${APP_NAME}.app" ]; then
+if [ -n "$SCRIPT_DIR" ] && [ -d "$SCRIPT_DIR/../build.noindex/${APP_NAME}.app" ]; then
+    LOCAL_APP="$SCRIPT_DIR/../build.noindex/${APP_NAME}.app"
+elif [ -n "$SCRIPT_DIR" ] && [ -d "$SCRIPT_DIR/../build/${APP_NAME}.app" ]; then
     LOCAL_APP="$SCRIPT_DIR/../build/${APP_NAME}.app"
 fi
 
